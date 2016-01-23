@@ -14,22 +14,22 @@ angular.module('scoutingApp').config(['$urlRouterProvider', '$stateProvider', fu
     
     $stateProvider.state('home.input', {
         url: '/input',
-        templateUrl: 'tpls/input.html'
+        templateUrl: 'scripts/tpls/input.html'
     });
     
     $stateProvider.state('home.output', {
         url: '/output',
-        templateUrl: 'tpls/output.html'
+        templateUrl: 'scripts/tpls/output.html'
     });
     
     $stateProvider.state('home.output.team', {
         url: '/team',
-        templateUrl: 'tpls/out-team.html'
+        templateUrl: 'scripts/tpls/out-team.html'
     });
     
     $stateProvider.state('home.output.match', {
         url: '/match',
-        templateUrl: 'tpls/out-match.html'
+        templateUrl: 'scripts/tpls/out-match.html'
     });
     
 }]);
