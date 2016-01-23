@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app="scoutingApp">
+    <head>
+        <title>KGB Scouting Client</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <ui-view></ui-view>
+        </div>
+
+    </body>
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    
+    <script src="scripts/app.js"></script>
+    <script src="scripts/directives/nav-tabs-dir.js"></script>
+    <script src="scripts/directives/input-dir.js"></script>
+    <script src="scripts/directives/output-dir.js"></script>
+    <script src="scripts/services/input-serv.js"></script>
+    <script src="scripts/services/output-serv.js"></script>
+</html>
