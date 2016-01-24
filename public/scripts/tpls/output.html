@@ -11,16 +11,15 @@
             <span class="col-xs-1">Average Points</span>
             <span class="col-xs-1">Average Penalties</span>
         </div>
-        <div class="row" ng-repeat="team in teams | sortBy: number" ui.sref="output.teams">
+        <div class="row" ng-repeat="team in teams | orderBy: number" ui.sref="output.teams">
             <span class="col-xs-1">{{team.number}}</span>
             <span class="col-xs-1">{{team.rank}}</span>
             <span class="col-xs-1">{{team.played}}</span>
             <span class="col-xs-1">{{team.wins}}</span>
             <span class="col-xs-1">{{team.losses}}</span>
-            <span class="col-xs-1">{{team.dqs}}</span>
             <span class="col-xs-1">{{team.avgScore}}</span>
             <span class="col-xs-1">{{team.avgPenalties}}</span>
+            <span class="col-xs-1">{{team.dqs}}</span>
         </div>
     </div>
-    <div ui-view></div>
 </div>
