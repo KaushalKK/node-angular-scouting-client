@@ -5,31 +5,63 @@ angular.module('scoutingApp', [
 
 angular.module('scoutingApp').config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
     
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/home');
     
     $stateProvider.state('home', {
-        url: '/',
-        templateUrl: 'scripts/tpls/landing.html'
+        url: '/home',
+        views: {
+            "main-nav": {
+                templateUrl: 'scripts/tpls/landing.html'
+            }
+        }
     });
     
-    $stateProvider.state('home.input', {
+    $stateProvider.state('input', {
         url: '/input',
-        templateUrl: 'scripts/tpls/input.html'
+        views: {
+            "main-nav": {
+                templateUrl: 'scripts/tpls/landing.html'
+            },
+            "content": {
+                templateUrl: 'scripts/tpls/input.html'
+            }
+        }
     });
     
-    $stateProvider.state('home.output', {
+    $stateProvider.state('output', {
         url: '/output',
-        templateUrl: 'scripts/tpls/output.html'
+        views: {
+            "main-nav": {
+                templateUrl: 'scripts/tpls/landing.html'
+            },
+            "content": {
+                templateUrl: 'scripts/tpls/output.html'
+            }
+        }
     });
     
-    $stateProvider.state('home.output.team', {
+    $stateProvider.state('output.team', {
         url: '/team',
-        templateUrl: 'scripts/tpls/out-team.html'
+        views: {
+            "main-nav": {
+                templateUrl: 'scripts/tpls/landing.html'
+            },
+            "output-type": {
+                templateUrl: 'scripts/tpls/out-team.html',
+            }
+        }
     });
     
-    $stateProvider.state('home.output.match', {
+    $stateProvider.state('output.match', {
         url: '/match',
-        templateUrl: 'scripts/tpls/out-match.html'
+        views: {
+            "main-nav": {
+                templateUrl: 'scripts/tpls/landing.html'
+            },
+            "output-type": {
+                templateUrl: 'scripts/tpls/out-match.html'
+            }
+        }
     });
     
 }]);

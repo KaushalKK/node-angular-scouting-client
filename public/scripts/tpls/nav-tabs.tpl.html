@@ -1,4 +1,4 @@
 <uib-tabset justified="true">
-    <uib-tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="tab.active" disable="tab.disabled" ui-sref="home.{{tab.value}}">
+    <uib-tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="tab.active" disable="tab.disabled" ui-sref="{{tab.value}}">
     </uib-tab>
 </uib-tabset>
