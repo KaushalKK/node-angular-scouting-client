@@ -1,3 +1,26 @@
-<div class="col-xs-offset-1 col-xs-10">
-    Output.
+<div class="col-xs-10">
+    Data for {{event}}.
+    <div>
+        <div class="row">
+            <span class="col-xs-1">Team</span>
+            <span class="col-xs-1">Rank</span>
+            <span class="col-xs-1">Played</span>
+            <span class="col-xs-1">Wins</span>
+            <span class="col-xs-1">Losses</span>
+            <span class="col-xs-1">DQ's</span>
+            <span class="col-xs-1">Average Points</span>
+            <span class="col-xs-1">Average Penalties</span>
+        </div>
+        <div class="row" ng-repeat="team in teams | sortBy: number" ui.sref="output.teams">
+            <span class="col-xs-1">{{team.number}}</span>
+            <span class="col-xs-1">{{team.rank}}</span>
+            <span class="col-xs-1">{{team.played}}</span>
+            <span class="col-xs-1">{{team.wins}}</span>
+            <span class="col-xs-1">{{team.losses}}</span>
+            <span class="col-xs-1">{{team.dqs}}</span>
+            <span class="col-xs-1">{{team.avgScore}}</span>
+            <span class="col-xs-1">{{team.avgPenalties}}</span>
+        </div>
+    </div>
+    <div ui-view></div>
 </div>

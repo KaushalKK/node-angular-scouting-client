@@ -42,26 +42,12 @@ angular.module('scoutingApp').config(['$urlRouterProvider', '$stateProvider', fu
     
     $stateProvider.state('output.team', {
         url: '/team',
-        views: {
-            "main-nav": {
-                templateUrl: 'scripts/tpls/landing.html'
-            },
-            "output-type": {
-                templateUrl: 'scripts/tpls/out-team.html',
-            }
-        }
+        templateUrl: 'scripts/tpls/out-team.html',
     });
     
     $stateProvider.state('output.match', {
         url: '/match',
-        views: {
-            "main-nav": {
-                templateUrl: 'scripts/tpls/landing.html'
-            },
-            "output-type": {
-                templateUrl: 'scripts/tpls/out-match.html'
-            }
-        }
+        templateUrl: 'scripts/tpls/out-match.html'
     });
     
 }]);
