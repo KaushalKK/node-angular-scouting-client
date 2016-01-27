@@ -4,16 +4,25 @@
         <title>KGB Scouting Client</title>
         
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/font-awesome.min.css">
         <link rel="stylesheet" href="styles/styles.css">
+
+        <!-- jvectormap -->
+        <link rel="stylesheet" href="external_scripts/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="external_scripts/AdminLTE/dist/css/AdminLTE.min.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+            folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="external_scripts/AdminLTE/dist/css/skins/_all-skins.min.css">
     </head>
     <body>
 
         <div class="container-fluid">
-            <ui-view name="main-nav"></ui-view>
-            <ui-view name="content"></ui-view>
+            <ui-view name="main"></ui-view>
         </div>
 
     </body>
@@ -25,10 +34,16 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     
+    <!-- Custom Scripts -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/directives/nav-tabs-dir.js"></script>
-    <script src="scripts/directives/input-dir.js"></script>
-    <script src="scripts/directives/output-dir.js"></script>
+    <script src="scripts/directives/nav-tabs/nav-tabs-dir.js"></script>
+    <script src="scripts/directives/input-match/input-dir.js"></script>
+    <script src="scripts/directives/output-team-list/output-dir.js"></script>
     <script src="scripts/services/input-serv.js"></script>
     <script src="scripts/services/output-serv.js"></script>
+    <!-- End Custom Scripts -->
+    
+    <!-- External Scripts -->
+    <script src="external_scripts/AdminLTE/dist/js/app.min.js"></script>
+    <!-- End External Scripts -->
 </html>

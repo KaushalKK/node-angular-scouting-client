@@ -1,6 +1,6 @@
 angular.module('scoutingApp').directive('inputTeamMatch', ['$http', function($http) {
     return {
-        templateUrl: 'scripts/tpls/in-match.tpl.html',
+        templateUrl: 'scripts/directives/input-match/in-match.tpl.html',
         link: function(scope) {
             function initMatch() {
                 
