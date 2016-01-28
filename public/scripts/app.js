@@ -14,8 +14,8 @@ angular.module('scoutingApp').config(['$urlRouterProvider', '$stateProvider', fu
                 templateUrl: 'scripts/tpls/landing.html',
                 controller: function($scope) {
                     $scope.mainNavTabs = [
-                        {name: 'Input', value: 'home.input', active: true},
-                        {name: 'Output', value: 'home.output', active: false}
+                        {name: 'Input', value: 'home.input.match', active: true},
+                        {name: 'Output', value: 'home.output.teams', active: false}
                     ];
                 }
             }
@@ -59,18 +59,28 @@ angular.module('scoutingApp').config(['$urlRouterProvider', '$stateProvider', fu
         url: '/output',
         views: {
             "content": {
-                templateUrl: 'scripts/tpls/output.html'
+                templateUrl: 'scripts/tpls/output.html',
+                controller: function($scope) {
+                    $scope.outputTabs = [
+                        {name: 'All Teams', value: 'home.output.teams', active: true},
+                        {name: 'All Matches', value: 'home.output.matches', active: false}
+                    ];
+                }
             }
         }
     });
     
-    $stateProvider.state('home.output.team', {
-        url: '/team',
-        templateUrl: 'scripts/tpls/out-team.html',
+    $stateProvider.state('home.output.teams', {
+        url: '/teams',
+        views: {
+            "output": {
+                template: '<div output-teams></div>'
+            }
+        }
     });
     
-    $stateProvider.state('home.output.match', {
-        url: '/match',
+    $stateProvider.state('home.output.matches', {
+        url: '/matches',
         templateUrl: 'scripts/tpls/out-match.html'
     });
     
