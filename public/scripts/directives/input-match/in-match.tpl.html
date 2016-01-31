@@ -1,23 +1,254 @@
 <div>
     <div class="row">
-        <div class="col-xs-3">
+        <h4>General Inputs</h4>
+        <div class="col-md-3">
             <label>Match #
-            <input type="text" ng-model="matchNum" />
+                <input type="number" ng-model="matchNum" />
             </label>
         </div>
-        <div class="col-xs-3">
+        <div class="col-md-3">
             <label>Team #
-            <input type="text" ng-model="teamNum" />
+                <input type="number" ng-model="teamNum" />
             </label>
         </div>
-        <div class="col-xs-3">
+        <div class="col-md-3">
             <label>Alliance
-            <label><input type="radio" ng-model="alliance" value="Red">Red</label>
-            <label><input type="radio" ng-model="alliance" value="Blue">Blue</label>
+                <label><input type="radio" ng-model="alliance" value="Red">Red</label>
+                <label><input type="radio" ng-model="alliance" value="Blue">Blue</label>
             </label>
         </div>
     </div>
     <div class="row">
-        
+        <h4>Defences</h4>
+        <label class="col-md-2">
+            <div class="small-box bg-aqua" ng-click="toggleA = !toggleA">
+                <div class="inner">
+                    <h3>Defence A</h3>
+                    <p>Portcullis / Cheval de Frise</p> 
+                </div>
+                <div class="icon">
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+                <div class="small-box-footer">
+                    Next Defence <i class="fa fa-arrow-circle-right"></i>
+                </div>
+            </div>
+            <div ng-show="toggleA">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Reach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="btn-group">
+                            <label class="btn btn-success" ng-model="aAutoReach" uib-btn-radio="'Yes'">Yes</label>
+                            <label class="btn btn-success" ng-model="aAutoReach" uib-btn-radio="'No'">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Breach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="btn-group">
+                            <label class="btn btn-success" ng-model="aAutoBreach" uib-btn-radio="'Yes'">Yes</label>
+                            <label class="btn btn-success" ng-model="aAutoBreach" uib-btn-radio="'No'">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Reach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="number" ng-model="aTeleBreach" min="0" max="2"/>
+                    </div>
+                </div>
+            </div>
+        </label>
+        <label class="col-md-2">
+            <div class="small-box bg-green" ng-click="toggleB = !toggleB">
+                <div class="inner">
+                    <h3>Defence B</h3>
+                    <p>Ramparts / Moat</p> 
+                </div>
+                <div class="icon">
+                    <i class="fa fa-signal"></i>
+                </div>
+                <div class="small-box-footer">
+                    Next Defence <i class="fa fa-arrow-circle-right"></i>
+                </div>
+            </div>
+            <div ng-show="toggleB">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Reach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="btn-group">
+                            <label class="btn btn-success" ng-model="bAutoReach" uib-btn-radio="'Yes'">Yes</label>
+                            <label class="btn btn-success" ng-model="bAutoReach" uib-btn-radio="'No'">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Breach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="btn-group">
+                            <label class="btn btn-success" ng-model="bAutoBreach" uib-btn-radio="'Yes'">Yes</label>
+                            <label class="btn btn-success" ng-model="bAutoBreach" uib-btn-radio="'No'">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Reach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="number" ng-model="bTeleBreach" min="0" max="2"/>
+                    </div>
+                </div>
+            </div>
+        </label>
+        <label class="col-md-2">
+            <div class="small-box bg-yellow" ng-click="toggleC = !toggleC">
+                <div class="inner">
+                    <h3>Defence C</h3>
+                    <p>Drawbridge / Sally Port</p> 
+                </div>
+                <div class="icon">
+                    <i class="fa fa-user-plus"></i>
+                </div>
+                <div class="small-box-footer">
+                    Next Defence <i class="fa fa-arrow-circle-right"></i>
+                </div>
+            </div>
+            <div ng-show="toggleC">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Reach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="btn-group">
+                            <label class="btn btn-success" ng-model="cAutoReach" uib-btn-radio="'Yes'">Yes</label>
+                            <label class="btn btn-success" ng-model="cAutoReach" uib-btn-radio="'No'">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Breach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="btn-group">
+                            <label class="btn btn-success" ng-model="cAutoBreach" uib-btn-radio="'Yes'">Yes</label>
+                            <label class="btn btn-success" ng-model="cAutoBreach" uib-btn-radio="'No'">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Reach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="number" ng-model="cTeleBreach" min="0" max="2"/>
+                    </div>
+                </div>
+            </div>
+        </label>
+        <label class="col-md-2">
+            <div class="small-box bg-purple" ng-click="toggleD = !toggleD">
+                <div class="inner">
+                    <h3>Defence D</h3>
+                    <p>Rockwall / Rough Terrain</p> 
+                </div>
+                <div class="icon">
+                    <i class="fa fa-cubes"></i>
+                </div>
+                <div class="small-box-footer">
+                    Next Defence <i class="fa fa-arrow-circle-right"></i>
+                </div>
+            </div>
+            <div ng-show="toggleD">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Reach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="btn-group">
+                            <label class="btn btn-success" ng-model="dAutoReach" uib-btn-radio="'Yes'">Yes</label>
+                            <label class="btn btn-success" ng-model="dAutoReach" uib-btn-radio="'No'">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Breach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="btn-group">
+                            <label class="btn btn-success" ng-model="dAutoBreach" uib-btn-radio="'Yes'">Yes</label>
+                            <label class="btn btn-success" ng-model="dAutoBreach" uib-btn-radio="'No'">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Reach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="number" ng-model="dTeleBreach" min="0" max="2"/>
+                    </div>
+                </div>
+            </div>
+        </label>
+        <label class="col-md-2">
+            <div class="small-box bg-red" ng-click="toggleE = !toggleE">
+                <div class="inner">
+                    <h3>Defence E</h3>
+                    <p>Low Bar</p> 
+                </div>
+                <div class="icon">
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+                <div class="small-box-footer">
+                    N/A <i class="fa fa-arrow-circle-right"></i>
+                </div>
+            </div>
+            <div ng-show="toggleE">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Reach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="btn-group">
+                            <label class="btn btn-success" ng-model="eAutoReach" uib-btn-radio="'Yes'">Yes</label>
+                            <label class="btn btn-success" ng-model="eAutoReach" uib-btn-radio="'No'">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Breach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="btn-group">
+                            <label class="btn btn-success" ng-model="eAutoBreach" uib-btn-radio="'Yes'">Yes</label>
+                            <label class="btn btn-success" ng-model="eAutoBreach" uib-btn-radio="'No'">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Reach</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="number" ng-model="eTeleBreach" min="0" max="2"/>
+                    </div>
+                </div>
+            </div>
+        </label>
     </div>
 </div>
