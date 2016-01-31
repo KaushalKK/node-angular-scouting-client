@@ -1,26 +1,29 @@
 <div>
     <div class="row">
-        <h4>General Inputs</h4>
-        <div class="col-md-3">
-            <label>Match #
-                <input type="number" ng-model="matchNum" />
-            </label>
+        <h3>General Inputs</h3>
+        <div class="col-lg-2">
+            <h5>Match #</h5>
+            <input type="number" ng-model="matchNum" />
         </div>
-        <div class="col-md-3">
-            <label>Team #
-                <input type="number" ng-model="teamNum" />
-            </label>
+        <div class="col-lg-2">
+            <h5>Team #</h5>
+            <input type="number" ng-model="teamNum" />
         </div>
-        <div class="col-md-3">
-            <label>Alliance
-                <label><input type="radio" ng-model="alliance" value="Red">Red</label>
-                <label><input type="radio" ng-model="alliance" value="Blue">Blue</label>
-            </label>
+        <div class="col-lg-2">
+            <h5>Alliance</h5>
+            <div class="btn-group">
+                <label class="btn btn-danger" ng-model="alliance" uib-btn-radio="'Red'">Red</label>
+                <label class="btn btn-primary" ng-model="alliance" uib-btn-radio="'Blue'">Blue</label>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <h5>Starting Location (dropdown)</h5>
+            <select ng-options="position.name for position in startingPositions" ng-model="startPosition"></select>
         </div>
     </div>
     <div class="row">
-        <h4>Defences</h4>
-        <label class="col-md-2">
+        <h3>Defences</h3>
+        <label class="col-lg-2">
             <div class="small-box bg-aqua" ng-click="toggleA = !toggleA">
                 <div class="inner">
                     <h3>Defence A</h3>
@@ -35,38 +38,38 @@
             </div>
             <div ng-show="toggleA">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Reach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <div class="btn-group">
-                            <label class="btn btn-success" ng-model="aAutoReach" uib-btn-radio="'Yes'">Yes</label>
-                            <label class="btn btn-success" ng-model="aAutoReach" uib-btn-radio="'No'">No</label>
+                            <label class="btn btn-primary" ng-model="aAutoReach" uib-btn-radio="true" ng-class="{ 'trueActive' : aAutoReach }">Yes</label>
+                            <label class="btn btn-primary" ng-model="aAutoReach" uib-btn-radio="false" ng-class="{ 'falseActive' : !aAutoReach }">No</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Breach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <div class="btn-group">
-                            <label class="btn btn-success" ng-model="aAutoBreach" uib-btn-radio="'Yes'">Yes</label>
-                            <label class="btn btn-success" ng-model="aAutoBreach" uib-btn-radio="'No'">No</label>
+                            <label class="btn btn-primary" ng-model="aAutoBreach" uib-btn-radio="true" ng-class="{ 'trueActive' : aAutoBreach }">Yes</label>
+                            <label class="btn btn-primary" ng-model="aAutoBreach" uib-btn-radio="false" ng-class="{ 'falseActive' : !aAutoBreach }">No</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
-                        <label>Reach</label>
+                    <div class="col-lg-5">
+                        <label>T Breach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-6">
                         <input type="number" ng-model="aTeleBreach" min="0" max="2"/>
                     </div>
                 </div>
             </div>
         </label>
-        <label class="col-md-2">
+        <label class="col-lg-2">
             <div class="small-box bg-green" ng-click="toggleB = !toggleB">
                 <div class="inner">
                     <h3>Defence B</h3>
@@ -81,38 +84,38 @@
             </div>
             <div ng-show="toggleB">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Reach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <div class="btn-group">
-                            <label class="btn btn-success" ng-model="bAutoReach" uib-btn-radio="'Yes'">Yes</label>
-                            <label class="btn btn-success" ng-model="bAutoReach" uib-btn-radio="'No'">No</label>
+                            <label class="btn btn-primary" ng-model="bAutoReach" uib-btn-radio="true" ng-class="{ 'trueActive' : bAutoReach }">Yes</label>
+                            <label class="btn btn-primary" ng-model="bAutoReach" uib-btn-radio="false" ng-class="{ 'falseActive' : !bAutoReach }">No</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Breach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <div class="btn-group">
-                            <label class="btn btn-success" ng-model="bAutoBreach" uib-btn-radio="'Yes'">Yes</label>
-                            <label class="btn btn-success" ng-model="bAutoBreach" uib-btn-radio="'No'">No</label>
+                            <label class="btn btn-primary" ng-model="bAutoBreach" uib-btn-radio="true" ng-class="{ 'trueActive' : bAutoBreach }">Yes</label>
+                            <label class="btn btn-primary" ng-model="bAutoBreach" uib-btn-radio="false" ng-class="{ 'falseActive' : !bAutoBreach }">No</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Reach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <input type="number" ng-model="bTeleBreach" min="0" max="2"/>
                     </div>
                 </div>
             </div>
         </label>
-        <label class="col-md-2">
+        <label class="col-lg-2">
             <div class="small-box bg-yellow" ng-click="toggleC = !toggleC">
                 <div class="inner">
                     <h3>Defence C</h3>
@@ -127,38 +130,38 @@
             </div>
             <div ng-show="toggleC">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Reach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <div class="btn-group">
-                            <label class="btn btn-success" ng-model="cAutoReach" uib-btn-radio="'Yes'">Yes</label>
-                            <label class="btn btn-success" ng-model="cAutoReach" uib-btn-radio="'No'">No</label>
+                            <label class="btn btn-primary" ng-model="cAutoReach" uib-btn-radio="true" ng-class="{ 'trueActive' : cAutoReach }">Yes</label>
+                            <label class="btn btn-primary" ng-model="cAutoReach" uib-btn-radio="false"  ng-class="{ 'falseActive' : !cAutoReach }">No</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Breach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <div class="btn-group">
-                            <label class="btn btn-success" ng-model="cAutoBreach" uib-btn-radio="'Yes'">Yes</label>
-                            <label class="btn btn-success" ng-model="cAutoBreach" uib-btn-radio="'No'">No</label>
+                            <label class="btn btn-primary" ng-model="cAutoBreach" uib-btn-radio="true" ng-class="{ 'trueActive' : cAutoBreach }">Yes</label>
+                            <label class="btn btn-primary" ng-model="cAutoBreach" uib-btn-radio="false" ng-class="{ 'falseActive' : !cAutoBreach }">No</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Reach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <input type="number" ng-model="cTeleBreach" min="0" max="2"/>
                     </div>
                 </div>
             </div>
         </label>
-        <label class="col-md-2">
+        <label class="col-lg-2">
             <div class="small-box bg-purple" ng-click="toggleD = !toggleD">
                 <div class="inner">
                     <h3>Defence D</h3>
@@ -173,45 +176,45 @@
             </div>
             <div ng-show="toggleD">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Reach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <div class="btn-group">
-                            <label class="btn btn-success" ng-model="dAutoReach" uib-btn-radio="'Yes'">Yes</label>
-                            <label class="btn btn-success" ng-model="dAutoReach" uib-btn-radio="'No'">No</label>
+                            <label class="btn btn-primary" ng-model="dAutoReach" uib-btn-radio="true" ng-class="{ 'trueActive' : dAutoReach }">Yes</label>
+                            <label class="btn btn-primary" ng-model="dAutoReach" uib-btn-radio="false" ng-class="{ 'falseActive' : !dAutoReach }">No</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Breach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <div class="btn-group">
-                            <label class="btn btn-success" ng-model="dAutoBreach" uib-btn-radio="'Yes'">Yes</label>
-                            <label class="btn btn-success" ng-model="dAutoBreach" uib-btn-radio="'No'">No</label>
+                            <label class="btn btn-primary" ng-model="dAutoBreach" uib-btn-radio="true" ng-class="{ 'trueActive' : dAutoBreach }">Yes</label>
+                            <label class="btn btn-primary" ng-model="dAutoBreach" uib-btn-radio="false" ng-class="{ 'falseActive' : !dAutoBreach }">No</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Reach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <input type="number" ng-model="dTeleBreach" min="0" max="2"/>
                     </div>
                 </div>
             </div>
         </label>
-        <label class="col-md-2">
+        <label class="col-lg-2">
             <div class="small-box bg-red" ng-click="toggleE = !toggleE">
                 <div class="inner">
                     <h3>Defence E</h3>
                     <p>Low Bar</p> 
                 </div>
                 <div class="icon">
-                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-anchor"></i>
                 </div>
                 <div class="small-box-footer">
                     N/A <i class="fa fa-arrow-circle-right"></i>
@@ -219,36 +222,133 @@
             </div>
             <div ng-show="toggleE">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Reach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <div class="btn-group">
-                            <label class="btn btn-success" ng-model="eAutoReach" uib-btn-radio="'Yes'">Yes</label>
-                            <label class="btn btn-success" ng-model="eAutoReach" uib-btn-radio="'No'">No</label>
+                            <label class="btn btn-primary" ng-model="eAutoReach" uib-btn-radio="true" ng-class="{ 'trueActive' : eAutoReach }">Yes</label>
+                            <label class="btn btn-primary" ng-model="eAutoReach" uib-btn-radio="false" ng-class="{ 'falseActive' : !eAutoReach }">No</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Breach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <div class="btn-group">
-                            <label class="btn btn-success" ng-model="eAutoBreach" uib-btn-radio="'Yes'">Yes</label>
-                            <label class="btn btn-success" ng-model="eAutoBreach" uib-btn-radio="'No'">No</label>
+                            <label class="btn btn-primary" ng-model="eAutoBreach" uib-btn-radio="true" ng-class="{ 'trueActive' : eAutoBreach }">Yes</label>
+                            <label class="btn btn-primary" ng-model="eAutoBreach" uib-btn-radio="false" ng-class="{ 'falseActive' : !eAutoBreach }">No</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <label>Reach</label>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9">
                         <input type="number" ng-model="eTeleBreach" min="0" max="2"/>
                     </div>
                 </div>
             </div>
         </label>
+    </div>
+    <div class="row">
+        <h3>Boulder Scoring</h3>
+        <div class="col-lg-5">
+            <div class="row">
+                <h4>Autonomous</h4>
+                <div class="col-lg-4">
+                    <h5>High</h5>
+                    <div><input type="number" ng-model="autoHigh" min="0"/></div>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Low</h5>
+                    <div><input type="number" ng-model="autoLow" min="0"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="row">
+                <h4>Tele-Operated</h4>
+                <div class="col-lg-3">
+                    <h5>High</h5>
+                    <div><input type="number" ng-model="teleHigh" min="0"/></div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Low</h5>
+                    <div><input type="number" ng-model="teleLow" min="0"/></div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Intake</h5>
+                    <div><input type="number" ng-model="telePickup" min="0"/></div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Shots Attempt</h5>
+                    <div><input type="number" ng-model="teleAttempt" min="0"/></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h3>End Game & Bonuses</h3>
+        <div class="col-lg-2">
+            <h4>Challenge</h4>
+            <div class="btn-group">
+                <label class="btn btn-primary" ng-model="batterPark" uib-btn-radio="true" ng-class="{ 'trueActive' : batterPark }">Yes</label>
+                <label class="btn btn-primary" ng-model="batterPark" uib-btn-radio="false" ng-class="{ 'falseActive' : !batterPark }">No</label>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <h4>Scale</h4>
+            <div class="btn-group">
+                <label class="btn btn-primary" ng-model="scale" uib-btn-radio="true" ng-class="{ 'trueActive' : scale }">Yes</label>
+                <label class="btn btn-primary" ng-model="scale" uib-btn-radio="false" ng-class="{ 'falseActive' : !scale }">No</label>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <h4>Breaching Bonus</h4>
+            <div class="btn-group">
+                <label class="btn btn-primary" ng-model="defenseBonus" uib-btn-radio="true" ng-class="{ 'trueActive' : defenseBonus }">Yes</label>
+                <label class="btn btn-primary" ng-model="defenseBonus" uib-btn-radio="false" ng-class="{ 'falseActive' : !defenseBonus }">No</label>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <h4>Capture Bonus</h4>
+            <div class="btn-group">
+                <label class="btn btn-primary" ng-model="challengeBonus" uib-btn-radio="true" ng-class="{ 'trueActive' : challengeBonus }">Yes</label>
+                <label class="btn btn-primary" ng-model="challengeBonus" uib-btn-radio="false" ng-class="{ 'falseActive' : !challengeBonus }">No</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Penalties & Comments</h3>
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4>Fouls</h4>
+                    <div><input type="number" ng-model="fouls" min="0"/></div>
+                </div>
+                <div class="col-lg-6">
+                    <h4>Tech Fouls</h4>
+                    <div><input type="number" ng-model="techFouls" min="0"/></div>
+                </div>
+            </div>
+            <div>
+                <h4>DQ</h4>
+                <div class="btn-group">
+                    <label class="btn btn-primary" ng-model="dq" uib-btn-radio="true" ng-class="{ 'trueActive' : dq }">Yes</label>
+                    <label class="btn btn-primary" ng-model="dq" uib-btn-radio="false" ng-class="{ 'falseActive' : !dq }">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <h4>Comments</h4>
+            <div><textarea ng-model="comments" rows="4" cols="50"/></div>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-primary btn-block" ng-click="submit()">Submit</button>
     </div>
 </div>
