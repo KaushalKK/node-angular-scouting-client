@@ -1,4 +1,6 @@
 node_modules
 public/bower_components
 public/external_scripts
+public/styles/font-awesome.min.css
+public/styles/fonts
 .settings
