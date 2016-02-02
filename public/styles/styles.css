@@ -1,12 +1,12 @@
 .headroom {
   margin-top: 20px;
 }
-.trueActive.active {
+.active.trueActive {
   color: #fff;
   background-color: #00a65a;
   border-color: #008d4c;
 }
-.falseActive.active {
+.active.falseActive {
   color: #fff;
   background-color: #dd4b39;
   border-color: #d73925;

@@ -62,6 +62,15 @@ angular.module('scoutingApp').directive('inputTeamMatch', ['inputMatches', funct
             
             initMatch();
             
+            var shots = [];
+            
+            scope.addOnClick = function(event) {
+                shots.push({
+                    x: event.offsetX - 50,
+                    y: event.offsetY - 50
+                });
+            };
+            
             scope.submit = function() {
                 var submitObj = {
                     matchNum: scope.matchNum
