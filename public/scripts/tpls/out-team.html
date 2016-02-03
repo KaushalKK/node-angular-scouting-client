@@ -1,0 +1,41 @@
+<div class="col-xs-10">
+    <h3>{{team}}</h3>
+    <div>
+        <div class="row">
+            <div class="col-xs-1">Match #</div>
+            <div class="col-xs-1">Auto High</div>
+            <div class="col-xs-1">Auto Low</div>
+            <div class="col-xs-1">Auto Reach / Breach (Category)</div>
+            <div class="col-xs-1">Tele High</div>
+            <div class="col-xs-1">Tele Low</div>
+            <div class="col-xs-1">Scoring Range / Location</div>
+            <div class="col-xs-1">Average Penalties</div>
+            <div class="col-xs-1">Breach Category - Count</div>
+            <div class="col-xs-1">Challenge / Scale</div>
+            <div class="col-xs-1">Foul / Tech Foul / DQ</div>
+            <div class="col-xs-1">Comments</div>
+        </div>
+        <div class="row" ng-repeat="match in teamMatches">
+            <div class="col-xs-1">{{match.number}}</div>
+            <div class="col-xs-1">{{match.autoHigh}}</div>
+            <div class="col-xs-1">{{match.autoLow}}</div>
+            <div class="col-xs-1">{{match.autoReach}} / {{match.autoBreach}} ({{match.autoBreachCategory}}Category)</div>
+            <div class="col-xs-1">{{match.teleHigh}}Tele High</div>
+            <div class="col-xs-1">{{match.teleLow}}Tele Low</div>
+            <div class="col-xs-1">{{match.scoringRange}} / {{match.scoringAngle}}</div>
+            <div class="col-xs-1">{{match.number}}Average Penalties</div>
+            <div class="col-xs-1" ng-class="{ 'bg-green' : match.breachBonus }">
+                <div>{{match.outerworks_A}} - {{match.outerworks_A_count}}</div>
+                <div>{{match.outerworks_B}} - {{match.outerworks_B_count}}</div>
+                <div>{{match.outerworks_C}} - {{match.outerworks_C_count}}</div>
+                <div>{{match.outerworks_D}} - {{match.outerworks_D_count}}</div>
+                <div>{{match.outerworks_E}} - {{match.outerworks_E_count}}</div>
+            </div>
+            <div class="col-xs-1" ng-class="{ 'bg-green' : match.captureBonus }">
+                {{match.challenged}} / {{match.scaled}}
+            </div>
+            <div class="col-xs-1">{{match.fouls}} / {{match.techFouls}} / {{match.dq}}</div>
+            <div class="col-xs-1">{{match.comments}}</div>
+        </div>
+    </div>
+</div>
