@@ -1,7 +1,7 @@
 {
-  "name": "OpenShift-Sample-App",
-  "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "name": "KGB Scouting Client",
+  "version": "0.0.1",
+  "description": "Test Scouting Application",
   "keywords": [
     "OpenShift",
     "Node.js",
@@ -9,7 +9,7 @@
     "openshift"
   ],
   "author": {
-    "name": "OpenShift",
+    "name": "Kaushal K",
     "email": "ramr@example.org",
     "url": "http://www.openshift.com/"
   },
@@ -28,7 +28,13 @@
     "errorhandler": "^1.4.2",
     "express": "^4.12.4"
   },
-  "devDependencies": {},
+  
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^1.1.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-wiredep": "^2.0.0"
+  },
   "bundleDependencies": [],
 
   "private": true,

@@ -5,10 +5,11 @@ angular.module('scoutingApp', [
 
 angular.module('scoutingApp').config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
     
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/home/input/match');
     
     $stateProvider.state('home', {
         url: '/home',
+        abstract: true,
         views: {
             "main": {
                 templateUrl: 'scripts/tpls/landing.html',
@@ -24,6 +25,7 @@ angular.module('scoutingApp').config(['$urlRouterProvider', '$stateProvider', fu
     
     $stateProvider.state('home.input', {
         url: '/input',
+        abstract: true,
         views: {
             "content": {
                 templateUrl: 'scripts/tpls/input.html',
@@ -57,6 +59,7 @@ angular.module('scoutingApp').config(['$urlRouterProvider', '$stateProvider', fu
     
     $stateProvider.state('home.output', {
         url: '/output',
+        abstract: true,
         views: {
             "content": {
                 templateUrl: 'scripts/tpls/output.html',
