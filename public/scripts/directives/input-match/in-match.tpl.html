@@ -347,9 +347,9 @@
             <h4>Comments</h4>
             <div><textarea ng-model="comments" rows="4" cols="50"/></div>
         </div>
-    </div>
-    <div class="row">
-        <img ng-src="../../../../styles/images/field.jpg" ng-click="addOnClick($event)"></img>
+        <div class="col-xs-offset-1 col-lg-2">
+            <canvas id="fieldImage" width="268" height="268" ng-click="addOnClick($event)"></canvas>
+        </div>
     </div>
     <div class="row headroom">
         <button class="btn btn-primary btn-block" ng-click="submit()">Submit</button>

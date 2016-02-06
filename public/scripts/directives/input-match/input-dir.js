@@ -1,3 +1,4 @@
+/* global fillStyle */
 angular.module('scoutingApp').directive('inputTeamMatch', ['inputMatches', function(inputMatches) {
     return {
         templateUrl: 'scripts/directives/input-match/in-match.tpl.html',
@@ -63,12 +64,37 @@ angular.module('scoutingApp').directive('inputTeamMatch', ['inputMatches', funct
             initMatch();
             
             var shots = [];
+            var canvas = document.getElementById("fieldImage");
+            var ctx = canvas.getContext("2d");
+            var imageObj = new Image();
+            var shotCircleRadius = 5;
+            
+            imageObj.onload = function() {
+                ctx.drawImage(imageObj, 0, 0);
+            };
+            imageObj.src = "../../../../styles/images/field.jpg";
             
             scope.addOnClick = function(event) {
-                shots.push({
-                    x: event.offsetX - 50,
-                    y: event.offsetY - 50
+                var shotX = event.offsetX,
+                    shotY = event.offsetY,
+                    oldShot = true;
+
+                oldShot = shots.some(function (obj) {
+                    return (shotX > (obj.x - shotCircleRadius) && shotX < (obj.x + shotCircleRadius)) && (shotY > (obj.y - shotCircleRadius) && shotY < (obj.y + shotCircleRadius));
                 });
+
+                if(!oldShot) {
+                    shots.push({
+                        x: shotX,
+                        y: shotY
+                    });
+
+                    ctx.beginPath();
+                    ctx.arc(shotX, shotY, shotCircleRadius, 0, 2*Math.PI, false);
+                    ctx.closePath();
+                    ctx.fillStyle = 'red';
+                    ctx.fill();
+                }
             };
             
             scope.submit = function() {
