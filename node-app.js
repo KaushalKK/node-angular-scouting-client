@@ -15,6 +15,12 @@ if ('development' === app.get('env')) {
 	app.use(errorhandler());
 }
 
+/* MYSQL Shift */
+// mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/
+
+console.log(process.env.OPENSHIFT_MYSQL_DB_HOST);
+console.log(process.env.OPENSHIFT_MYSQL_DB_PORT);
+
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
