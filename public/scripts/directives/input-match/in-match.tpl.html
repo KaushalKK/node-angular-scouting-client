@@ -348,6 +348,11 @@
             <div><textarea ng-model="comments" rows="4" cols="50"/></div>
         </div>
         <div class="col-xs-offset-1 col-lg-2">
+            <h4>Shot Map</h4>
+            <div class="btn-group">
+                <label class="btn btn-primary" ng-model="addShot" uib-btn-radio="true" ng-class="{ 'trueActive' : addShot }">Add Shot</label>
+                <label class="btn btn-primary" ng-model="addShot" uib-btn-radio="false" ng-class="{ 'falseActive' : !addShot }">Delete Shot</label>
+            </div>
             <canvas id="fieldImage" width="268" height="268" ng-click="addOnClick($event)"></canvas>
         </div>
     </div>

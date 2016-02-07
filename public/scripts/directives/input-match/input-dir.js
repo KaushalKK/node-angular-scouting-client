@@ -48,6 +48,7 @@ angular.module('scoutingApp').directive('inputTeamMatch', ['inputMatches', funct
                 scope.dq = false;
                 /* Comments */
                 scope.comments = '';
+                scope.addShot = true;
                 
                 scope.startPosition = scope.startingPositions[0];
             }
@@ -75,25 +76,53 @@ angular.module('scoutingApp').directive('inputTeamMatch', ['inputMatches', funct
             imageObj.src = "../../../../styles/images/field.jpg";
             
             scope.addOnClick = function(event) {
-                var shotX = event.offsetX,
+                var shotToDeleteIndex = -1,
+                    shotX = event.offsetX,
                     shotY = event.offsetY,
                     oldShot = true;
+                
+                function checkAddExistingShot(storedShot, index) {
+                    if(scope.addShot) {
+                        return (shotX > (storedShot.x - shotCircleRadius) && shotX < (storedShot.x + shotCircleRadius)) && (shotY > (storedShot.y - shotCircleRadius) && shotY < (storedShot.y + shotCircleRadius));
+                    }
+                }
+                
+                function checkDeleteExistingShot(storedShot, index) {
+                    if ((shotX > (storedShot.x - shotCircleRadius) && shotX < (storedShot.x + shotCircleRadius)) && (shotY > (storedShot.y - shotCircleRadius) && shotY < (storedShot.y + shotCircleRadius))) {
+                        shotToDeleteIndex = index;
+                    }
+                }
 
-                oldShot = shots.some(function (obj) {
-                    return (shotX > (obj.x - shotCircleRadius) && shotX < (obj.x + shotCircleRadius)) && (shotY > (obj.y - shotCircleRadius) && shotY < (obj.y + shotCircleRadius));
-                });
+                if(!scope.addShot) {
+                    shots.forEach(checkDeleteExistingShot);
 
-                if(!oldShot) {
-                    shots.push({
-                        x: shotX,
-                        y: shotY
-                    });
+                    if(shotToDeleteIndex > -1) {
+                        var deleteShotX = shots[shotToDeleteIndex].x,
+                            deleteShotY = shots[shotToDeleteIndex].y;
 
-                    ctx.beginPath();
-                    ctx.arc(shotX, shotY, shotCircleRadius, 0, 2*Math.PI, false);
-                    ctx.closePath();
-                    ctx.fillStyle = 'red';
-                    ctx.fill();
+                        ctx.save();
+                        ctx.globalCompositeOperation = 'destination-out';
+                        ctx.beginPath();
+                        ctx.arc(deleteShotX, deleteShotY, shotCircleRadius + 1, 0, 2*Math.PI, false);
+                        ctx.fill();
+                        ctx.globalCompositeOperation = 'source-over';
+                        shots.splice(shotToDeleteIndex, 1);
+                    }
+                } else {
+                    oldShot = shots.some(checkAddExistingShot);
+
+                    if(!oldShot) {
+                        shots.push({
+                            x: shotX,
+                            y: shotY
+                        });
+
+                        ctx.beginPath();
+                        ctx.arc(shotX, shotY, shotCircleRadius, 0, 2*Math.PI, false);
+                        ctx.closePath();
+                        ctx.fillStyle = 'red';
+                        ctx.fill();
+                    }
                 }
             };
             
